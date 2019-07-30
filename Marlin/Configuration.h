@@ -137,7 +137,7 @@
 
 // Optional custom name for your RepStrap or other custom machine
 // Displayed in the LCD "Ready" message
-#define CUSTOM_MACHINE_NAME "TW´s Bizer"
+#define CUSTOM_MACHINE_NAME "TWs Bizer"
 
 // Define this to set a unique identifier for this printer, (Used by some programs to differentiate between machines)
 // You can use an online service to generate a random UUID. (eg http://www.uuidgenerator.net/version4)
@@ -468,7 +468,7 @@
   //#define PID_DEBUG             // Sends debug data to the serial port.
   //#define PID_OPENLOOP 1        // Puts PID in open loop. M104/M140 sets the output power from 0 to PID_MAX
   //#define SLOW_PWM_HEATERS      // PWM with very low frequency (roughly 0.125Hz=8s) and minimum state time of approximately 1s useful for heaters driven by a relay
-  //#define PID_PARAMS_PER_HOTEND // Uses separate PID parameters for each extruder (useful for mismatched extruders)
+  #define PID_PARAMS_PER_HOTEND // Uses separate PID parameters for each extruder (useful for mismatched extruders)
                                   // Set/get with gcode: M301 E[extruder number, 0-2]
   #define PID_FUNCTIONAL_RANGE 10 // If the temperature difference between the target temperature and the actual temperature
                                   // is more than PID_FUNCTIONAL_RANGE then the PID will be shut off and the heater will be set to min/max.
@@ -1033,16 +1033,16 @@
 
 // The size of the print bed
 #define X_BED_SIZE 230
-#define Y_BED_SIZE 150
+#define Y_BED_SIZE 145
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-// X-Offset 33,349, Y-Offset -3,143
-#define X_MIN_POS -230
-#define Y_MIN_POS -150
+//X-Offset -85, Y-Offset -4
+#define X_MIN_POS 20
+#define Y_MIN_POS 10
 #define Z_MIN_POS 0
-#define X_MAX_POS 0//X_BED_SIZE
-#define Y_MAX_POS 0//Y_BED_SIZE
-#define Z_MAX_POS 121
+#define X_MAX_POS 275
+#define Y_MAX_POS 155
+#define Z_MAX_POS 150
 
 /**
  * Software Endstops
@@ -1298,7 +1298,7 @@
 // @section homing
 
 // The center of the bed is at (X=0, Y=0)
-//#define BED_CENTER_AT_0_0
+#define BED_CENTER_AT_150_72
 
 // Manually set the home position. Leave these undefined for automatic settings.
 // For DELTA this is the top-center of the Cartesian print volume.
@@ -1324,7 +1324,7 @@
 
 // Homing speeds (mm/m)
 #define HOMING_FEEDRATE_XY (50*60)
-#define HOMING_FEEDRATE_Z  (4*60)
+#define HOMING_FEEDRATE_Z  (10*60)
 
 // Validate that endstops are triggered on homing moves
 #define VALIDATE_HOMING_ENDSTOPS
